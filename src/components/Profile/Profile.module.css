@@ -1,0 +1,14 @@
+.profile {
+    grid-area: content;
+    background-color: #e96d6a;
+}
+
+.cover img {
+    width: 900px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.avatar img {
+    width: 150px;
+}
