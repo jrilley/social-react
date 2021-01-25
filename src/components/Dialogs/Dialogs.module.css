@@ -1,0 +1,23 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    /*grid-template-rows: 4fr 4fr 4fr;*/
+}
+
+.active {
+    color: gold;
+}
+
+.addMessage {
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 250px;
+    padding: 10px;
+}
+
+.addMessage .messageArea {
+}
+
+.addMessage .messageArea textarea {
+    width: 400px;
+}

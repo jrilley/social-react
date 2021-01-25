@@ -9,18 +9,24 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Navigation/>
+                <Navigation state={props.state.friendsPage} />
                 <div className="app-wrapper-content">
-                    <Route path='/dialogs' component={Dialogs}/>
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/news' component={News} />
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings} />
+                    <Route path='/dialogs' render={ () => <Dialogs
+                        state={props.state.messagesPage}
+                        dispatch={props.dispatch}
+                    />}/>
+                    <Route path='/profile' render={ () => <Profile
+                        state={props.state.profilePage}
+                        dispatch={props.dispatch}
+                    />} />
+                    <Route path='/news' render={ () => <News />} />
+                    <Route path='/music' render={ () => <Music />}/>
+                    <Route path='/settings' render={ () => <Settings />} />
                 </div>
             </div>
         </BrowserRouter>
