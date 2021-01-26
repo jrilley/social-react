@@ -8,7 +8,6 @@ const Dialogs = (props) => {
     let DialogsElements = props.state.dialogs.map(dialog => <Dialog id={dialog.id} name={dialog.name}/>);
     let MessagesElements = props.state.messages.map(message => <Message message={message.message}/>);
 
-    let addMessageElement = React.createRef();
 
     let sendMessage = () => {
         props.dispatch(addMessageActionCreator());
