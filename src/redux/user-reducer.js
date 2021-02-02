@@ -1,12 +1,48 @@
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET-USERS';
+
 const initialState = {
-    users: [
-        {id: 1, name: 'Anton Dmytrenko', sex: 'Male', country: 'Ukraine', avatar: 'http://1.bp.blogspot.com/-e1ygQH9Rzyo/UxsDOZkbW3I/AAAAAAAAAyA/CyZPV-9UK9g/s1600/9P1nv0t-gxE.jpg'},
-        {id: 2, name: 'Varvara Lopatkova', sex: 'Female', country: 'Russia', avatar: 'https://trikky.ru/wp-content/blogs.dir/1/files/2020/07/30/original.jpg'},
-        {id: 3, name: 'Andrey Ustrica', sex: 'Male', country: 'Belarus', avatar: 'https://cs16planet.ru/steam-avatars/images/avatar3219.jpg'}]
+    users: []
 };
 
 const userReducer = (state = initialState, action) => {
+
+    switch (action.type) {
+        case FOLLOW:
+            return {
+                ...state,
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return {...u, followed: true}
+                    }
+                    return u;
+                })
+            };
+        case UNFOLLOW:
+            return {
+                ...state,
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return {...u, followed: false}
+                    }
+                    return u;
+                })
+            };
+        case SET_USERS:
+            return {
+                ...state,
+                users: [...state.users, ...action.users]
+            };
+        default:
+            return state;
+    }
+
     return state;
 };
+
+export const followAC = (userId) => ({type: FOLLOW, userId});
+export const unFollowAC = (userId) => ({type: UNFOLLOW, userId});
+export const setUsersAC = (users) => ({type: SET_USERS, users});
 
 export default userReducer;

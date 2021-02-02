@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2588e29a-a0c1-4618-876a-3ea661f2f3d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Users/User/User.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/User/User.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/Users.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/user-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/User/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User/User.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/User/User.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User/User.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +79,7 @@
       <workItem from="1612097402454" duration="306000" />
       <workItem from="1612115420515" duration="4717000" />
       <workItem from="1612206388120" duration="5984000" />
-      <workItem from="1612283858462" duration="7797000" />
+      <workItem from="1612283858462" duration="14677000" />
     </task>
     <servers />
   </component>
