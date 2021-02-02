@@ -1,0 +1,82 @@
+.users {
+    margin: 1em;
+}
+
+.users .userItems {
+    display: grid;
+    grid-template-columns: 1.4fr 3.6fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "img inf btn";
+}
+
+.users .userItems .userAvatar img {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    border: 2px solid #89C28A;
+    border-radius: 50%;
+    grid-area: img;
+}
+
+.users .userItems .userInformation {
+    border: 2px solid #89C28A;
+    border-radius: 15px;
+    margin-right: 15px;
+    display: grid;
+    grid-template-columns: 6fr 1fr 5fr;
+    grid-template-areas:
+            "name . sex"
+            ". country .";
+    grid-area: inf;
+    padding: 15px 5px;
+    background-color: white;
+}
+
+.users .userItems .userInformation .userInfName {
+    grid-area: name;
+}
+
+.users .userItems .userInformation .userInfName span {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.users .userItems .userInformation .userInfSex {
+    grid-area: sex;
+}
+
+.users .userItems .userInformation .userInfSex span {
+    font-weight: bold;
+    font-size: 16px;
+    float: right;
+}
+
+.users .userItems .userInformation .userInfCountry {
+    grid-area: country;
+    margin-top: 60px;
+}
+
+.users .userItems .userInformation .userInfCountry span {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.users .userItems .userButton {
+    grid-area: btn;
+    padding: 3.2em;
+}
+
+.users .userItems .userButton input {
+    height: 40px;
+    width: 100px;
+    background-color: #A0DDAD;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #89C28A;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
