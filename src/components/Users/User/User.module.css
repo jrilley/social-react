@@ -3,6 +3,7 @@
     grid-template-columns: 1.4fr 3.6fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "img inf btn";
+    margin-bottom: 15px;
 }
 
 .userItems .userAvatar img {

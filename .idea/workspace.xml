@@ -4,10 +4,11 @@
     <list default="true" id="2588e29a-a0c1-4618-876a-3ea661f2f3d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/User/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User/User.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/User/User.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User/User.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/user-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/user-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,18 +36,18 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\01-first-project\social-react\src\redux" />
+      <recent name="D:\projects\01-first-project\react-kabzda-1\src\components\Profile" />
+      <recent name="D:\projects\01-first-project\react-kabzda-1\src\components\Navigation" />
+      <recent name="D:\projects\01-first-project\react-kabzda-1\src\components\Header" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\01-first-project\social-react\src\components\Users\User" />
       <recent name="D:\projects\01-first-project\social-react\src\components\Navigation" />
       <recent name="D:\projects\01-first-project\social-react\src\components\Dialogs" />
       <recent name="D:\projects\01-first-project\social-react\src\components\Profile\MyPosts" />
       <recent name="D:\projects\01-first-project\social-react\src\redux" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\projects\01-first-project\social-react\src\redux" />
-      <recent name="D:\projects\01-first-project\react-kabzda-1\src\components\Profile" />
-      <recent name="D:\projects\01-first-project\react-kabzda-1\src\components\Navigation" />
-      <recent name="D:\projects\01-first-project\react-kabzda-1\src\components\Header" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -80,6 +81,9 @@
       <workItem from="1612115420515" duration="4717000" />
       <workItem from="1612206388120" duration="5984000" />
       <workItem from="1612283858462" duration="14677000" />
+      <workItem from="1612349348425" duration="129000" />
+      <workItem from="1612355302955" duration="1634000" />
+      <workItem from="1612521032927" duration="5433000" />
     </task>
     <servers />
   </component>

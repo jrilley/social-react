@@ -1,12 +1,13 @@
 import React from 'react';
 import s from './User.module.css';
+import userImage from '../../../assets/images/User-Icon.jpg';
 
 const User = (props) => {
-
+    debugger;
     return (
         <div className={s.userItems}>
             <div className={s.userAvatar}>
-                <img src={props.avatar} alt="avatar"/>
+                <img src={props.avatar != null ? props.avatar : userImage} alt="avatar"/>
             </div>
             <div className={s.userInformation}>
                 <div className={s.userInfName}><span>{props.name}</span></div>
