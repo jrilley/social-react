@@ -12,7 +12,7 @@ import UsersContainer from "./components/Users/UsersContainer";
 
 const App = () => {
     return (
-        <BrowserRouter> /* Нужен для работы роутинга */
+        <BrowserRouter> {/* Нужен для работы роутинга */}
             <div className="app-wrapper">
                 <Header/>
                 <NavigationContainer />

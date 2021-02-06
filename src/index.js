@@ -7,7 +7,7 @@ import {Provider} from 'react-redux';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}> /* Нужен для доступности стора в любой компоненте с помощью функции connect() */
+        <Provider store={store}> {/* Нужен для доступности стора в любой компоненте с помощью функции connect() */}
             <App/>
         </Provider>
     </React.StrictMode>,
