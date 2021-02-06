@@ -2,7 +2,7 @@ import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 
 let store = {
-    _state: {
+    _state: { // Создаём приватный стейт
         profilePage: {
             posts: [
                 {id: 1, message: 'Hi, i am there', LikesCount: 12},
@@ -36,16 +36,16 @@ let store = {
             ]
         }
     },
-    _rerenderEntireTree() {
+    _rerenderEntireTree() { // Этот притный метод служит для перерисовки всего дерева приложения
         console.log('The state has been changed');
     },
-    getState() {
+    getState() { // Метод для возврата стейта
         return this._state;
     },
-    subscribe(observer) {
+    subscribe(observer) { // Публычный метод перерисовки дерева
         this._rerenderEntireTree = observer;
     },
-    dispatch(action) {
+    dispatch(action) { // Служит для закидывания данных в стейт
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
 

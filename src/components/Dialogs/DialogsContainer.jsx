@@ -3,15 +3,15 @@ import Dialogs from './Dialogs';
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 import {connect} from "react-redux";
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state) => { // Прокидываем стейт в пропсы
     return {
         messagesPage: state.messagesPage
     }
 };
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {  // Прокидываем диспатчи в пропсы
     return {
         sendMessage: () => {
-            dispatch(addMessageActionCreator());
+            dispatch(addMessageActionCreator()); // Закидываем данные в стейт
         },
         onMessageChange: (text) => {
             dispatch(updateNewMessageTextActionCreator(text));

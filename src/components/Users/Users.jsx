@@ -14,7 +14,6 @@ const Users = (props) => {
 
     }
 
-
     let Users = props.usersPage.map(user => <User
         id={user.id}
         name={user.name}
