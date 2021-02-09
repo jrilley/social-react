@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_PROFILE = 'SET_PROFILE';
 
 const initialState = { // Инициализация начального стейта
     posts: [
@@ -7,7 +8,8 @@ const initialState = { // Инициализация начального сте
         {id: 2, message: 'Hello world', LikesCount: 23},
         {id: 3, message: 'Hello world, i am there', LikesCount: 1}
     ],
-    newPostText: ''
+    newPostText: '',
+    profile: null
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -25,6 +27,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 newPostText: action.newText // Добавляем новое значение
             };
+        case SET_PROFILE:
+            return {
+                ...state,
+                profile: action.profile
+            };
         default:
             return state;
     }
@@ -33,5 +40,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
 export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text });
+export const setProfile = (profile) => ({ type: SET_PROFILE, profile });
+
 
 export default profileReducer;

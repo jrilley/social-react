@@ -1,7 +1,12 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import Preloader from "../../common/Preloader/Preloader";
+import userImage from "../../../assets/images/User-Icon.jpg";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+    if (!props.profile) {
+        return <Preloader />
+    }
     return (
         <div>
             <div className={s.cover}>
@@ -9,7 +14,14 @@ const ProfileInfo = () => {
                     src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"/>
             </div>
             <div className={s.avatar}>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnYB7pV4de12zrKQayds0fU56TBYw06fYaqQ&usqp=CAU"/>
+                <img src={props.profile.photos.large}/>
+            </div>
+            <div className={s.description}>
+                <span className={s.fullName}>{props.profile.fullName}</span>
+                <div>{props.profile.lookingForAJob
+                    ? <img src="https://png.pngtree.com/png-vector/20191122/ourmid/pngtree-recruitment-concept-of-job-search-flat-vector-with-people-workers-business-png-image_2018509.jpg" />
+                    : null}</div>
+                <span>{props.profile.lookingForAJobDescription}</span>
             </div>
         </div>
     );
