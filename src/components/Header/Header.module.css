@@ -9,8 +9,20 @@
 
 .logo {
     margin: 0 20px;
+    float: left;
 }
 
 .logo img {
     width: 64px;
+}
+
+.auth_block {
+    float: right;
+    margin: 25px;
+}
+
+.auth_block a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
 }

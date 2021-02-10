@@ -9,12 +9,13 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import NavigationContainer from "./components/Navigation/NavigationContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = () => {
     return (
         <BrowserRouter> {/* Нужен для работы роутинга */}
             <div className="app-wrapper">
-                <Header/>
+                <HeaderContainer />
                 <NavigationContainer />
                 <div className="app-wrapper-content">
                     <Route path='/dialogs' render={() => <DialogsContainer/>}/>
