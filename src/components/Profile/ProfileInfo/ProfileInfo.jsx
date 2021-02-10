@@ -7,6 +7,7 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
+
     return (
         <div>
             <div className={s.cover}>
@@ -18,10 +19,14 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.description}>
                 <span className={s.fullName}>{props.profile.fullName}</span>
+                <hr/>
                 <div>{props.profile.lookingForAJob
                     ? <img src="https://png.pngtree.com/png-vector/20191122/ourmid/pngtree-recruitment-concept-of-job-search-flat-vector-with-people-workers-business-png-image_2018509.jpg" />
                     : null}</div>
+                <hr/>
                 <span>{props.profile.lookingForAJobDescription}</span>
+                <hr />
+                <span>{props.profile.contacts.facebook}</span>
             </div>
         </div>
     );
