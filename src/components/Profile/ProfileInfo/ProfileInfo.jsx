@@ -8,25 +8,33 @@ const ProfileInfo = (props) => {
         return <Preloader />
     }
 
+    const cover = "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg";
+
     return (
         <div>
             <div className={s.cover}>
-                <img
-                    src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"/>
+                <img src={cover} alt="cover"/>
             </div>
             <div className={s.avatar}>
-                <img src={props.profile.photos.large}/>
+                {props.profile.photos.large
+                    ? <img src={props.profile.photos.large} alt="avatar"/>
+                    : <img src={userImage} alt="avatar" />
+                }
             </div>
             <div className={s.description}>
                 <span className={s.fullName}>{props.profile.fullName}</span>
                 <hr/>
                 <div>{props.profile.lookingForAJob
                     ? <img src="https://png.pngtree.com/png-vector/20191122/ourmid/pngtree-recruitment-concept-of-job-search-flat-vector-with-people-workers-business-png-image_2018509.jpg" />
-                    : null}</div>
+                    : <span>Looking for a job</span>}</div>
                 <hr/>
-                <span>{props.profile.lookingForAJobDescription}</span>
+                <span>{props.profile.lookingForAJobDescription
+                    ? props.profile.lookingForAJobDescription
+                    : "Job description"}</span>
                 <hr />
-                <span>{props.profile.contacts.facebook}</span>
+                <span>{props.profile.contacts.facebook
+                    ? props.profile.contacts.facebook
+                    : "There is facebook contacts"}</span>
             </div>
         </div>
     );
