@@ -2,7 +2,8 @@ import React from 'react';
 import s from "./Users.module.css";
 import userImage from "../../assets/images/User-Icon.jpg";
 import {NavLink} from "react-router-dom";
-import {followApi} from "../../api/followApi";
+ import {followApi} from "../../api/followApi";
+import {toggleFollowingProgress} from "../../redux/user-reducer";
 
 let Users = (props) => {
     let pageSize = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -39,20 +40,24 @@ let Users = (props) => {
                     </div>
                     <div className={s.userButton}>
                         {user.followed
-                            ? <input type="submit" onClick={() => {
+                            ? <input disabled={props.isFollowingProgress.some(id => id === user.id)} type="submit" onClick={() => {
+                                props.toggleFollowingProgress(true, user.id);
                                 followApi.unfollow(user.id)
                                     .then((data) => {
                                         if (data.resultCode === 0) {
                                             props.unFollow(user.id)
                                         }
+                                        props.toggleFollowingProgress(false, user.id);
                                     });
                             }} value="unfollow"/>
-                            : <input type="submit" onClick={() => {
+                            : <input disabled={props.isFollowingProgress.some(id => id === user.id)} type="submit" onClick={() => {
+                                props.toggleFollowingProgress(true, user.id);
                                 followApi.follow(user.id)
                                     .then((data) => {
                                         if (data.resultCode === 0) {
                                             props.follow(user.id)
                                         }
+                                        props.toggleFollowingProgress(false, user.id);
                                     });
                             }} value="follow"/>}
                     </div>
