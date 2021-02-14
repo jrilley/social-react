@@ -1,3 +1,5 @@
+import {usersApi} from "../api/usersApi";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
@@ -67,6 +69,16 @@ const userReducer = (state = initialState, action) => {
         default:
             return state;
     }
+};
+
+export const getUsers = (currentPage, pageSize) => (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    usersApi.getUsers(currentPage, pageSize)
+        .then((data) => {
+            dispatch(toggleIsFetching(false));
+            dispatch(setUsers(data.items));
+            dispatch(setTotalUsersCount(data.totalCount));
+        });
 };
 
 export const follow = (userId) => ({type: FOLLOW, userId});
