@@ -2,10 +2,11 @@ import React from 'react';
 import Dialogs from './Dialogs';
 import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/dialogs-reducer";
 import {connect} from "react-redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 let mapStateToProps = (state) => { // Прокидываем стейт в пропсы
     return {
-        messagesPage: state.messagesPage
+        messagesPage: state.messagesPage,
     }
 };
 let mapDispatchToProps = (dispatch) => {  // Прокидываем диспатчи в пропсы
@@ -19,6 +20,6 @@ let mapDispatchToProps = (dispatch) => {  // Прокидываем диспат
     }
 };
 
-const DialogsContainer = connect(mapStateToProps,mapDispatchToProps)(Dialogs);
+const DialogsContainer = withAuthRedirect(connect(mapStateToProps,mapDispatchToProps)(Dialogs));
 
 export default DialogsContainer;
