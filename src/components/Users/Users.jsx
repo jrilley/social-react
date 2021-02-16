@@ -4,7 +4,7 @@ import userImage from "../../assets/images/User-Icon.jpg";
 import {NavLink, Redirect} from "react-router-dom";
 
 let Users = (props) => {
-    debugger
+
     if (props.isAuth) {
         let pageSize = Math.ceil(props.totalUsersCount / props.pageSize);
 

@@ -2,6 +2,7 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import userImage from "../../../assets/images/User-Icon.jpg";
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -23,6 +24,9 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.description}>
                 <span className={s.fullName}>{props.profile.fullName}</span>
+
+                 <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+
                 <hr/>
                 <div>{props.profile.lookingForAJob
                     ? <img src="https://png.pngtree.com/png-vector/20191122/ourmid/pngtree-recruitment-concept-of-job-search-flat-vector-with-people-workers-business-png-image_2018509.jpg" />
