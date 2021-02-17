@@ -1,7 +1,6 @@
 import {profileApi} from "../api/profileApi";
 
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_PROFILE = 'SET_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
@@ -11,7 +10,6 @@ const initialState = { // Инициализация начального сте
         {id: 2, message: 'Hello world', LikesCount: 23},
         {id: 3, message: 'Hello world, i am there', LikesCount: 1}
     ],
-    newPostText: '',
     profile: null,
     status: ""
 };
@@ -20,16 +18,10 @@ const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST:
-            let body = state.newPostText;
+            let body = action.newPostText;
             return {
                 ...state, // Копируем стейт
-                newPostText: '', // Зануляем значение
                 posts: [...state.posts, {id: 7, message: body, LikesCount: 0}] // Заполняем новый объект постами из основгного стейта и добавляем новые
-            };
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText // Добавляем новое значение
             };
         case SET_PROFILE:
             return {
@@ -47,8 +39,7 @@ const profileReducer = (state = initialState, action) => {
 
 };
 
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text });
+export const addPostActionCreator = (newPostText) => ({ type: ADD_POST, newPostText });
 export const setProfile = (profile) => ({ type: SET_PROFILE, profile });
 export const setStatus = (status) => ({type: SET_STATUS, status});
 

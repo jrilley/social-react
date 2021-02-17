@@ -29,7 +29,7 @@ export const getMe = () => (dispatch) => {
             dispatch(setUserData(id, login, email));
         }
     });
-}
+};
 
 export const setUserData = (userId, login, email) => ({ type: SET_USER_DATA, data: {
     userId, login, email
