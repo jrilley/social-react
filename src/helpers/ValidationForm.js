@@ -23,9 +23,8 @@ export const renderField = Element => ({
                                         meta: {touched, error}
                                     }) => (
     <div>
-        <label>{label}</label>
         <div>
-            <Element {...input} placeholder={label} type={type}/>
+            <Element {...input} placeholder={label} type={type}/><br/>
             {
                 touched && (error && <span>{error}</span>)
             }

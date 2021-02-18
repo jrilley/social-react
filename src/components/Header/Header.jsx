@@ -1,10 +1,16 @@
 import React from 'react';
 import s from './Header.module.css';
-import { NavLink } from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 
 
 const Header = (props) => {
     // debugger;
+
+    const logOut = () => {
+        props.logout();
+        return <Redirect to={'/login'} />
+    }
+
     return (
         <header className={s.header}>
             <div className={s.logo}>
@@ -14,7 +20,10 @@ const Header = (props) => {
             </div>
             <div className={s.auth_block}>
                 {props.auth.isAuth
-                    ? <NavLink to={`/profile/${props.auth.userId}`}>{props.auth.login}</NavLink>
+                    ? <div>
+                        <NavLink to={`/profile/${props.auth.userId}`}>{props.auth.login}</NavLink>
+                        --- <button onClick={logOut}>LogOut</button>
+                    </div>
                     : <NavLink to="/login">Login</NavLink>}
             </div>
         </header>

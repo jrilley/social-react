@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
 import {Field, reduxForm} from "redux-form";
-import {maxLength300, renderField} from "../../helpers/ValidationForm";
+import {maxLength, maxLength300, renderField} from "../../helpers/ValidationForm";
 
 const Dialogs = (props) => {
 
