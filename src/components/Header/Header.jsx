@@ -4,8 +4,6 @@ import {NavLink, Redirect} from 'react-router-dom';
 
 
 const Header = (props) => {
-    // debugger;
-
     const logOut = () => {
         props.logout();
         return <Redirect to={'/login'} />

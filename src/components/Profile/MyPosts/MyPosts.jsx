@@ -26,16 +26,16 @@ const MyPosts = (props) => {
     )
 };
 
-
+const TextAreaField = renderField('textarea');
 
 const AddPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <Field
-                placeholder={"Введите сообщение"}
-                component={renderField("textarea")}
+                label={"Введите сообщение"}
+                component={TextAreaField}
                 name="newPostText"
-                validate={[required, maxLength300]}
+                validate={[required]}
             />
             <button>Add Post</button>
         </form>

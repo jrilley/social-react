@@ -3,7 +3,7 @@ import s from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
 import {Field, reduxForm} from "redux-form";
-import {maxLength, maxLength300, renderField} from "../../helpers/ValidationForm";
+import {maxLength100, renderField, required} from "../../helpers/ValidationForm";
 
 const Dialogs = (props) => {
 
@@ -30,19 +30,21 @@ const Dialogs = (props) => {
     );
 }
 
+const TextAreaField = renderField('textarea');
+
 const DialogsForm = (props) => {
 
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={s.messageArea}>
-                <Field placeholder={"Введите сообщение"}
-                       component={renderField("textarea")}
+                <Field label={"Введите сообщение"}
+                       component={TextAreaField}
                        name={"newMessageBody"}
-                       validate={[ maxLength300 ]}
+                       validate={[ required, maxLength100 ]}
                 />
             </div>
             <div className={s.messageBtn}>
-                <button>Send message</button>
+                <button type={"submit"} disabled={props.submitting}>Send message</button>
             </div>
         </form>
     );

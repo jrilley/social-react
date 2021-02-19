@@ -39,14 +39,11 @@ const profileReducer = (state = initialState, action) => {
 
 };
 
-export const addPostActionCreator = (newPostText) => ({ type: ADD_POST, newPostText });
-export const setProfile = (profile) => ({ type: SET_PROFILE, profile });
+export const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText});
+export const setProfile = (profile) => ({type: SET_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 
 export const getProfile = (userId) => (dispatch) => {
-    if (!userId) {
-        userId = 2;
-    }
     profileApi.getProfile(userId).then((data) => {
         dispatch(setProfile(data));
     });

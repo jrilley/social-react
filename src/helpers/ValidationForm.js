@@ -1,10 +1,14 @@
 import React from 'react';
+import styles from './validationFormControl.module.css';
 
-export const required = value => (value) ? undefined : "Required";
+export const required = value => (value || typeof value === 'number') ? undefined : "Required";
 
-export const maxLength = max => value => value && value.length > max ? `Must be ${max} characters or less` : undefined;
-export const maxLength300 = maxLength(300);
-export const minLength = min => value => value && value.length < min ? `Must be ${min} characters or more` : undefined;
+export const maxLength = max => value =>
+        value && value.length > max
+            ? `Must be ${max} characters or less`
+            : undefined;
+
+export const maxLength100 = maxLength(100);
 
 export const email = value =>
     value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
@@ -16,18 +20,14 @@ export const alphaNumeric = value =>
         ? 'Only alphanumeric characters'
         : undefined;
 
-export const renderField = Element => ({
-                                        input,
-                                        label,
-                                        type,
-                                        meta: {touched, error}
-                                    }) => (
-    <div>
+export const renderField = Element => ({input, label, type, meta, ...props}) => {
+    const hasError = meta.touched && meta.error;
+
+    return <div className={styles.formControl + ' ' + (hasError ? styles.error : "")}>
+        <label>{label}</label>
         <div>
-            <Element {...input} placeholder={label} type={type}/><br/>
-            {
-                touched && (error && <span>{error}</span>)
-            }
+            <Element {...input} {...props} type={type}/>
         </div>
+        {hasError && <span>{meta.error}</span>}
     </div>
-)
+}
