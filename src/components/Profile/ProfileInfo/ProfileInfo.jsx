@@ -1,7 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import userImage from "../../../assets/images/User-Icon.jpg";
-import ProfileStatus from "./ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
