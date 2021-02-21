@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./Users.module.css";
 import userImage from "../../assets/images/User-Icon.jpg";
-import {NavLink, Redirect} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
     let pageSize = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -18,7 +18,7 @@ let Users = (props) => {
                     <button onClick={() => {
                         props.setPage(p)
                     }}>
-                        <span className={props.currentPage === p && s.currentPage}>{p}</span>
+                        <span className={props.currentPage === p ? s.currentPage : null}>{p}</span>
                     </button>
                 )
             })}

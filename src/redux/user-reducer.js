@@ -72,9 +72,10 @@ const userReducer = (state = initialState, action) => {
     }
 };
 
-export const getUsers = (currentPage, pageSize) => (dispatch) => {
+export const requestUsers = (page, pageSize) => (dispatch) => {
     dispatch(toggleIsFetching(true));
-    usersApi.getUsers(currentPage, pageSize)
+    dispatch(setCurrentPage(page));
+    usersApi.getUsers(page, pageSize)
         .then((data) => {
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));
@@ -107,7 +108,7 @@ export const followTC = (userId) => (dispatch) => {
 export const follow = (userId) => ({type: FOLLOW, userId});
 export const unFollow = (userId) => ({type: UNFOLLOW, userId});
 export const setUsers = (users) => ({type: SET_USERS, users});
-// export const setCurrentPage = (currentPage) => ({type: CHANGE_PAGE, currentPage});
+export const setCurrentPage = (currentPage) => ({type: CHANGE_PAGE, currentPage});
 export const setTotalUsersCount = (totalCount) => ({type: SET_USERS_TOTAL_COUNT, totalCount});
 export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const toggleFollowingProgress = (inProgress, uId) => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, inProgress, uId});
