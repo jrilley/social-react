@@ -7,9 +7,6 @@ let Preloader = (props) => {
 
     useEffect(() => {
         setLoading(true);
-        // setTimeout(() => {
-        //     setLoading(false);
-        // }, 8000);
     }, []);
     return ( <div className={s.preloader}>
         {(loading) ? <RingLoader color={'#0DC758'} loading={loading} size={150} /> : null}
