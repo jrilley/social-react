@@ -13,6 +13,7 @@ import Login from './components/Login/Login';
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import UseEffect from "./components/UseEffect/UseEffect";
 
 class App extends Component {
     componentDidMount() {
@@ -28,6 +29,7 @@ class App extends Component {
                     <HeaderContainer/>
                     <NavigationContainer/>
                     <div className="app-wrapper-content">
+                        <Route path='/useEffect' render={() => <UseEffect/>}/>
                         <Route path='/dialogs' render={() => <DialogsContainer/>}/>
                         <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
                         <Route path='/news' render={() => <News/>}/>

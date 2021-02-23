@@ -9,7 +9,7 @@ const Profile = (props) => {
         return <Preloader />
     }
     return <div>
-        <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
+        <ProfileInfo profile={props.profile} status={props.status} authorizedUserId={props.authorizedUserId} updateStatus={props.updateStatus}/>
         <MyPostsContainer store={props.store}/>
     </div>
 }

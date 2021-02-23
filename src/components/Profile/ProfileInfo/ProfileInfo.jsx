@@ -17,7 +17,7 @@ const ProfileInfo = (props) => {
             <div className={s.description}>
                 <span className={s.fullName}>{props.profile.fullName}</span>
 
-                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                 <ProfileStatusWithHooks status={props.status} profileUId={props.profile.userId} authorizedUserId={props.authorizedUserId} updateStatus={props.updateStatus}/>
 
                 <hr/>
                 <div>{props.profile.lookingForAJob

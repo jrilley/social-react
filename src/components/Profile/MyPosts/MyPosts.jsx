@@ -1,14 +1,10 @@
 import React from 'react';
-import s from './MyPosts.module.css';
 import Post from './Post/Post';
 import {Field, reduxForm} from "redux-form";
-import {maxLength300, renderField, required} from "../../../helpers/ValidationForm";
+import {renderField, required} from "../../../helpers/ValidationForm";
 
-const MyPosts = (props) => {
-
+function MyPosts(props) {
     let postsElements = props.posts.map(post => <Post message={post.message} likes={post.LikesCount}/>);
-
-
     let addNewPost = (value) => {
         props.addPost(value.newPostText)
     }
@@ -24,7 +20,7 @@ const MyPosts = (props) => {
             </div>
         </div>
     )
-};
+}
 
 const TextAreaField = renderField('textarea');
 
