@@ -2,29 +2,6 @@
     margin: 1em;
 }
 
-.pagination {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.pagination div {
-    display: inline;
-}
-
-.pagination span {
-    margin: 0 5px;
-    padding: 0 25px;
-    border: 2px solid #89C28A;
-    border-radius: 20px;
-    background-color: #A0DDAD;
-    color: #FFF;
-    font-weight: bold;
-}
-
-.currentPage {
-    font-weight: bold;
-}
-
 .userItems {
     display: grid;
     grid-template-columns: 1.4fr 3.6fr 1fr;

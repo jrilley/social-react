@@ -21,25 +21,23 @@ class App extends Component {
     }
 
     render() {
-        if(!this.props.initialized) return <Preloader/>
+        if (!this.props.initialized) return <Preloader/>
 
         return (
-            <BrowserRouter> {/* Нужен для работы роутинга */}
-                <div className="app-wrapper">
-                    <HeaderContainer/>
-                    <NavigationContainer/>
-                    <div className="app-wrapper-content">
-                        <Route path='/useEffect' render={() => <UseEffect/>}/>
-                        <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-                        <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-                        <Route path='/news' render={() => <News/>}/>
-                        <Route path='/music' render={() => <Music/>}/>
-                        <Route path='/settings' render={() => <Settings/>}/>
-                        <Route path='/users' render={() => <UsersContainer/>}/>
-                        <Route path='/login' render={() => <Login/>}/>
-                    </div>
+            <div className="app-wrapper">
+                <HeaderContainer/>
+                <NavigationContainer/>
+                <div className="app-wrapper-content">
+                    <Route path='/useEffect' render={() => <UseEffect/>}/>
+                    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                    <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                    <Route path='/news' render={() => <News/>}/>
+                    <Route path='/music' render={() => <Music/>}/>
+                    <Route path='/settings' render={() => <Settings/>}/>
+                    <Route path='/users' render={() => <UsersContainer/>}/>
+                    <Route path='/login' render={() => <Login/>}/>
                 </div>
-            </BrowserRouter>
+            </div>
         );
     }
 }

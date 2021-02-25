@@ -4,8 +4,6 @@ import userImage from "../../../assets/images/User-Icon.jpg";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
-    const cover = "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg";
-
     return (
         <div>
             <div className={s.avatar}>
