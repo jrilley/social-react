@@ -3,17 +3,21 @@ import './App.css';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import {BrowserRouter, Route} from 'react-router-dom';
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import {BrowserRouter, Route, withRouter} from 'react-router-dom';
 import NavigationContainer from "./components/Navigation/NavigationContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from './components/Login/Login';
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
-import UseEffect from "./components/UseEffect/UseEffect";
+import store from "./redux/redux-store";
+import {compose} from "redux";
+import LazySuspense from "./hoc/lazySuspense";
+
+
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends Component {
     componentDidMount() {
@@ -28,9 +32,8 @@ class App extends Component {
                 <HeaderContainer/>
                 <NavigationContainer/>
                 <div className="app-wrapper-content">
-                    <Route path='/useEffect' render={() => <UseEffect/>}/>
-                    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-                    <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                    <Route path='/dialogs' render={LazySuspense(DialogsContainer)}/>
+                    <Route path='/profile/:userId?' render={LazySuspense(ProfileContainer)}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>
@@ -46,4 +49,17 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 });
 
-export default connect(mapStateToProps, {initializeApp})(App);
+let AppContainer = compose(
+    withRouter,
+    connect(mapStateToProps, {initializeApp}))(App);
+
+const MainApp = (props) => {
+    return <React.StrictMode>
+        <BrowserRouter> {/* Нужен для работы роутинга */}
+            <Provider store={store}> {/* Нужен для доступности стора в любой компоненте с помощью функции connect() */}
+                <AppContainer />
+            </Provider>
+        </BrowserRouter>
+    </React.StrictMode>
+};
+export default MainApp;

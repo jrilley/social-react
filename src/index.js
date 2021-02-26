@@ -1,19 +1,10 @@
 import reportWebVitals from './reportWebVitals';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import store from './redux/redux-store';
-import {Provider} from 'react-redux';
-import {BrowserRouter} from "react-router-dom";
+import MainApp from "./App";
 
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter> {/* Нужен для работы роутинга */}
-            <Provider store={store}> {/* Нужен для доступности стора в любой компоненте с помощью функции connect() */}
-                <App/>
-            </Provider>
-        </BrowserRouter>
-    </React.StrictMode>,
+    <MainApp />,
     document.getElementById('root')
 );
 
